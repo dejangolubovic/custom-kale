@@ -53,6 +53,8 @@ COPY requirements/katib-example-requirements.txt /tmp/requirements.txt
 RUN pip3 install -r /tmp/requirements.txt
 
 RUN echo "jovyan ALL=(ALL:ALL) NOPASSWD:ALL" > /etc/sudoers.d/jovyan
+
+RUN ln -s /eos $HOME/eos
 WORKDIR /home/jovyan
 USER jovyan
 
